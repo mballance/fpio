@@ -1,0 +1,20 @@
+[submodule "rtl/std_protocol_if"]
+	path = rtl/std_protocol_if
+	url = https://github.com/mballance/std_protocol_if.git
+	branch = master
+[submodule "ve/simscripts"]
+	path = ve/simscripts
+	url = https://github.com/mballance/simscripts.git
+	branch = master
+[submodule "rtl/memory_primitives"]
+	path = rtl/memory_primitives
+	url = https://github.com/mballance/memory_primitives.git
+	branch = master
+[submodule "ve/synthscripts"]
+	path = ve/synthscripts
+	url = https://github.com/mballance/synthscripts.git
+	branch = master
+[submodule "synthscripts"]
+	path = synthscripts
+	url = https://github.com/mballance/synthscripts.git
+	branch = master
