@@ -13,6 +13,7 @@ package fpio_fifo_in_client_agent_pkg;
 	`include "fpio_fifo_in_client_driver.svh"
 	`include "fpio_fifo_in_client_monitor.svh"
 	`include "fpio_fifo_in_client_seq_base.svh"
+	`include "fpio_fifo_in_client_directed_seq.svh"
 	`include "fpio_fifo_in_client_agent.svh"
 endpackage
 

@@ -11,7 +11,7 @@ interface fpio_fifo_if #(
 		parameter int			FIFO_BITS,
 		parameter int			DATA_WIDTH
 		);
-	bit[FIFO_BITS-1:0]			avail;
+	bit[FIFO_BITS:0]			avail;
 	bit[DATA_WIDTH-1:0]			data;
 	bit							data_en;
 	bit							data_ack;

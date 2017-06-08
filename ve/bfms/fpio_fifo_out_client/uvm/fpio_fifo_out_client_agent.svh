@@ -1,20 +1,20 @@
 
 
 /**
- * Class: fpio_fifo_in_client_agent
+ * Class: fpio_fifo_out_client_agent
  */
-class fpio_fifo_in_client_agent `fpio_fifo_in_client_plist extends uvm_agent;
+class fpio_fifo_out_client_agent `fpio_fifo_out_client_plist extends uvm_agent;
 	
-	typedef fpio_fifo_in_client_agent  `fpio_fifo_in_client_params this_t;
+	typedef fpio_fifo_out_client_agent  `fpio_fifo_out_client_params this_t;
 	`uvm_component_param_utils (this_t)
 
 
-	const string report_id = "fpio_fifo_in_client_agent";
+	const string report_id = "fpio_fifo_out_client_agent";
 	
-	typedef fpio_fifo_in_client_driver `fpio_fifo_in_client_params 	drv_t;
-	typedef fpio_fifo_in_client_config `fpio_fifo_in_client_params 	cfg_t;
-	typedef fpio_fifo_in_client_monitor `fpio_fifo_in_client_params	mon_t;
-	typedef fpio_fifo_in_client_seq_item `fpio_fifo_in_client_params item_t;
+	typedef fpio_fifo_out_client_driver `fpio_fifo_out_client_params 	drv_t;
+	typedef fpio_fifo_out_client_config `fpio_fifo_out_client_params 	cfg_t;
+	typedef fpio_fifo_out_client_monitor `fpio_fifo_out_client_params	mon_t;
+	typedef fpio_fifo_out_client_seq_item `fpio_fifo_out_client_params item_t;
 
 	drv_t							m_driver;
 	uvm_sequencer #(item_t)			m_seqr;

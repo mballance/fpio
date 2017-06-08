@@ -12,6 +12,7 @@ module fpio_fifo_tb;
 	import uvm_pkg::*;
 	import fpio_fifo_tests_pkg::*;
 	import fpio_fifo_in_client_agent_pkg::*;
+	import fpio_fifo_out_client_agent_pkg::*;
 	
 	reg[15:0]                       rst_cnt = 0;
 	reg                             rstn = 0;
@@ -61,23 +62,37 @@ module fpio_fifo_tb;
 			.out         (u_bfm2fifo.fifo_out	));
 	
 	fpio_fifo_in_client_bfm #(
-			.FIFO_DEPTH  (FIFO_BITS ), 
+			.FIFO_BITS   (FIFO_BITS ), 
 			.DATA_WIDTH  (DATA_WIDTH )
 		) u_in_bfm (
 			.clk         (clk        				), 
 			.rstn        (rstn       				), 
 			.client      (u_fifo2bfm.fifo_in_client	));
 	
+	fpio_fifo_out_client_bfm #(
+			.FIFO_BITS   (FIFO_BITS ), 
+			.DATA_WIDTH  (DATA_WIDTH )
+		) u_out_bfm (
+			.clk         (clk        				), 
+			.rstn        (rstn       				), 
+			.client      (u_bfm2fifo.fifo_out_client));
+	
 	typedef fpio_fifo_in_client_config #(FIFO_BITS, DATA_WIDTH) fpio_fifo_in_client_config_t;
+	typedef fpio_fifo_out_client_config #(FIFO_BITS, DATA_WIDTH) fpio_fifo_out_client_config_t;
 	
 	initial begin
 		automatic fpio_fifo_in_client_config_t in_cfg =
 			fpio_fifo_in_client_config_t::type_id::create("in_cfg");
+		automatic fpio_fifo_out_client_config_t out_cfg =
+			fpio_fifo_out_client_config_t::type_id::create("out_cfg");
 		
 		in_cfg.vif = u_in_bfm.u_core;
+		out_cfg.vif = u_out_bfm.u_core;
 		
 		uvm_config_db #(fpio_fifo_in_client_config_t)::set(uvm_top, "*m_in_agent*",
 				fpio_fifo_in_client_config_t::report_id, in_cfg);
+		uvm_config_db #(fpio_fifo_out_client_config_t)::set(uvm_top, "*m_out_agent*",
+				fpio_fifo_out_client_config_t::report_id, out_cfg);
 		
 		run_test();
 	end

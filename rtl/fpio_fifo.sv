@@ -24,13 +24,84 @@ module fpio_fifo #(
 	reg[FIFO_BITS-1:0]		fifo_bottom;
 	reg[FIFO_BITS:0]		fifo_count;
 	
+	localparam VALID_DELAY = 1;
+	
+	// Push state machine
+	reg[1:0]				push_state;
+	reg						push_done;
+	reg[VALID_DELAY-1:0]	push_valid;
+	
+	always @(posedge clk or rstn) begin
+		if (rstn == 0) begin
+			push_state <= 0;
+			push_valid <= 0;
+			push_done <= 0;
+		end else begin
+			push_done <= in.data_en;
+//			push_valid <= (push_valid << 1);
+//			case (push_state) 
+//				0: begin
+//					push_done <= 0;
+//					if (in.data_en) begin
+//						push_state <= 1;
+//						push_valid[0] <= 1;
+//					end
+//				end
+//				1: begin
+//					if (push_valid[VALID_DELAY-1]) begin
+//						push_state <= 0;
+//						push_done <= 1;
+//					end
+//				end
+//			endcase
+		end
+	end
+//	assign u_in2ram.write_en = (in.data_en | push_state == 1);
+	assign u_in2ram.write_en = in.data_en;
+//	assign in.data_ack = push_valid[VALID_DELAY-1];
+	assign in.data_ack = push_done;
+	
+	// Pop state machine
+	localparam POP_DELAY = 1;
+	reg[1:0]				pop_state;
+	reg						pop_done;
+	reg[POP_DELAY-1:0]		pop_valid;
+	
+	always @(posedge clk or rstn) begin
+		if (rstn == 0) begin
+			pop_state <= 0;
+			pop_valid <= 0;
+			pop_done  <= 0;
+		end else begin
+			pop_done <= out.data_en;
+//			pop_valid <= (pop_valid << 1);
+//			case (pop_state)
+//				0: begin
+//					pop_done <= 0;
+//					if (out.data_en) begin
+//						pop_state <= 1;
+//						pop_valid[0] <= 1;
+//					end
+//				end
+//				1: begin
+//					if (pop_valid[POP_DELAY-1]) begin
+//						pop_state <= 0;
+//						pop_done <= 1;
+//					end
+//				end
+//			endcase
+		end
+	end
+//	assign out.data_ack = pop_valid[POP_DELAY-1];
+	assign out.data_ack = pop_done;
+
 	always @(posedge clk or rstn) begin
 		if (rstn == 0) begin
 			fifo_top 	<= 0;
 			fifo_bottom <= 0;
 			fifo_count 	<= 0;
 		end else begin
-			case ({in.data_en, out.data_en})
+			case ({push_done, pop_done})
 				2'b10: begin
 					fifo_top <= fifo_top + 1;
 					fifo_count <= fifo_count + 1;
@@ -65,7 +136,6 @@ module fpio_fifo #(
 	// What to assume about SRAM timing?
 
 	assign u_in2ram.addr = fifo_top;
-	assign u_in2ram.write_en = in.data_en;
 	assign u_in2ram.read_en = 0;
 	assign u_in2ram.write_data = in.data;
 	

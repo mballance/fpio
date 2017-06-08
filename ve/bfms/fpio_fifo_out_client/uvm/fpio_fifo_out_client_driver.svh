@@ -1,15 +1,15 @@
 
 
-class fpio_fifo_in_client_driver `fpio_fifo_in_client_plist extends 
-		uvm_driver #(fpio_fifo_in_client_seq_item `fpio_fifo_in_client_params);
+class fpio_fifo_out_client_driver `fpio_fifo_out_client_plist extends 
+		uvm_driver #(fpio_fifo_out_client_seq_item `fpio_fifo_out_client_params);
 	
-	typedef fpio_fifo_in_client_driver `fpio_fifo_in_client_params this_t;
-	typedef fpio_fifo_in_client_config `fpio_fifo_in_client_params cfg_t;
-	typedef fpio_fifo_in_client_seq_item `fpio_fifo_in_client_params item_t;
+	typedef fpio_fifo_out_client_driver `fpio_fifo_out_client_params this_t;
+	typedef fpio_fifo_out_client_config `fpio_fifo_out_client_params cfg_t;
+	typedef fpio_fifo_out_client_seq_item `fpio_fifo_out_client_params item_t;
 	
 	`uvm_component_param_utils (this_t);
 
-	const string report_id = "fpio_fifo_in_client_driver";
+	const string report_id = "fpio_fifo_out_client_driver";
 	
 	uvm_analysis_port #(item_t)								ap;
 	
@@ -32,15 +32,18 @@ class fpio_fifo_in_client_driver `fpio_fifo_in_client_plist extends
 	endfunction
 	
 	task run_phase(uvm_phase phase);
-		`fpio_fifo_in_client_vif_t			vif = m_cfg.vif;
+		`fpio_fifo_out_client_vif_t			vif = m_cfg.vif;
 		item_t		item;
 		
 		forever begin
 			seq_item_port.get_next_item(item);
+			
 			// TODO: execute the sequence item
 //			item.print();
 			
-			vif.write(item.data);
+			vif.read(item.data);
+			
+			$display("item.data=%0d", item.data);
 			
 			// Send the item to the analysis port
 			ap.write(item);
