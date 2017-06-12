@@ -25,11 +25,13 @@ ${FPIO}/ve/bfms/fpio_fifo_in_client/fpio_fifo_in_client_bfm.sv
 -F ${FPIO}/ve/bfms/fpio_fifo_out_client/uvm/sve.F
 ${FPIO}/ve/bfms/fpio_fifo_out_client/fpio_fifo_out_client_bfm.sv
 
+-F ${SV_BFMS}/generic_sram_line_en_master/uvm/sve.F
+${SV_BFMS}/generic_sram_line_en_master/generic_sram_line_en_master_bfm.sv
 
-${SIM_DIR_A}/../tb/fpio_fifo_env_pkg.sv
+${SIM_DIR_A}/../tb/fpio_uvm_env_pkg.sv
 
-${SIM_DIR_A}/../tests/fpio_fifo_tests_pkg.sv
+${SIM_DIR_A}/../tests/fpio_uvm_tests_pkg.sv
 
-${SIM_DIR_A}/../tb/fpio_fifo_tb.sv
+${SIM_DIR_A}/../tb/fpio_uvm_tb.sv
 
 

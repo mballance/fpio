@@ -1,0 +1,597 @@
+Note: loading defaults from .simscripts
+run_root=/scratch1/ballance/rundir/fpio_uvm
+cmd=
+Test: tests/fpio_uvm_smoke_test.f
+make: Entering directory `/export/scratch/ballance/rundir/fpio_uvm/qs'
+QuestaSim-64 vlog 10.6a Compiler 2017.03 Mar 16 2017
+Start time: 14:40:13 on Jun 08,2017
+vlog -sv -f /project/inFact/ballance/work/projects/pss_examples/infact_dma_block2soc/rtl/mor1kx_soc/rtl/fpio/ve/fpio_uvm/sim/scripts/vlog.f 
+-- Compiling interface fpio_fifo_if
+-- Compiling module fpio_fifo
+-- Compiling interface fpio_if
+-- Compiling module fpio_tx
+-- Compiling module fpio
+-- Compiling module generic_rom_w
+-- Compiling module generic_sram_byte_en_w
+-- Compiling module generic_sram_line_en_w
+-- Compiling module generic_sram_line_en_dualport_w
+-- Compiling module generic_rom
+-- Compiling module generic_sram_byte_en
+-- Compiling module generic_sram_byte_en_dualport
+-- Compiling module generic_sram_line_en
+-- Compiling module generic_sram_line_en_dualport
+-- Compiling interface axi4_if
+-- Compiling interface axi4_ace_if
+-- Compiling interface wb_if
+-- Compiling module wb_master_stub
+-- Compiling module wb_slave_stub
+-- Compiling interface generic_sram_byte_en_if
+-- Compiling interface generic_sram_line_en_if
+** Note: (vlog-2286) /home/ballance/dirs/infact/work/projects/pss_examples/infact_dma_block2soc/rtl/mor1kx_soc/rtl/fpio/ve/bfms/fpio_fifo_in_client/uvm/./fpio_fifo_in_client_agent_pkg.sv(2): Using implicit +incdir+/u/release/10.6a/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src from import uvm_pkg
+-- Compiling package fpio_fifo_in_client_agent_pkg
+-- Importing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)
+-- Compiling interface fpio_fifo_in_client_bfm_core
+-- Compiling interface fpio_fifo_in_client_bfm
+-- Compiling package fpio_fifo_out_client_agent_pkg
+-- Compiling interface fpio_fifo_out_client_bfm_core
+-- Compiling interface fpio_fifo_out_client_bfm
+-- Compiling package generic_sram_line_en_master_agent_pkg
+-- Compiling interface generic_sram_line_en_master_core
+-- Compiling interface generic_sram_line_en_master_bfm
+-- Compiling package fpio_uvm_env_pkg
+-- Importing package generic_sram_line_en_master_agent_pkg
+-- Importing package fpio_fifo_in_client_agent_pkg
+-- Importing package fpio_fifo_out_client_agent_pkg
+-- Compiling package fpio_uvm_tests_pkg
+-- Importing package fpio_uvm_env_pkg
+-- Compiling module fpio_uvm_tb
+-- Importing package fpio_uvm_tests_pkg
+
+Top level modules:
+	fpio_tx
+	generic_rom_w
+	generic_sram_byte_en_w
+	generic_sram_line_en_w
+	generic_sram_byte_en_dualport
+	wb_master_stub
+	wb_slave_stub
+	fpio_uvm_tb
+End time: 14:40:14 on Jun 08,2017, Elapsed time: 0:00:01
+Errors: 0, Warnings: 0
+QuestaSim-64 vopt 10.6a Compiler 2017.03 Mar 16 2017
+Start time: 14:40:14 on Jun 08,2017
+vopt -o fpio_uvm_tb_opt fpio_uvm_tb -dpiheader fpio_uvm_tb_dpi.h "+designfile" -debug 
+
+Top level modules:
+	fpio_uvm_tb
+
+Analyzing design...
+-- Loading module fpio_uvm_tb
+-- Importing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)
+-- Importing package fpio_uvm_tests_pkg
+-- Importing package fpio_uvm_env_pkg
+-- Importing package generic_sram_line_en_master_agent_pkg
+-- Importing package fpio_fifo_in_client_agent_pkg
+-- Importing package fpio_fifo_out_client_agent_pkg
+-- Loading interface generic_sram_line_en_if
+-- Loading interface fpio_fifo_if
+-- Loading module fpio
+-- Loading module fpio_fifo
+-- Loading module generic_sram_line_en_dualport_w
+-- Loading module generic_sram_line_en_dualport
+-- Loading interface fpio_fifo_in_client_bfm
+-- Loading interface fpio_fifo_in_client_bfm_core
+-- Loading interface fpio_fifo_out_client_bfm
+-- Loading interface fpio_fifo_out_client_bfm_core
+-- Loading interface generic_sram_line_en_master_bfm
+-- Loading interface generic_sram_line_en_master_core
+-- Loading package mtiUvm.questa_uvm_pkg
+Optimizing 31 design-units (inlining 14/37 module instances):
+-- Inlining module generic_sram_line_en_dualport(fast)
+-- Optimizing module generic_sram_line_en_dualport_w(fast)
+-- Inlining interface generic_sram_line_en_if(fast__1)
+-- Inlining interface fpio_fifo_if(fast__1)
+-- Optimizing module fpio_uvm_tb(fast)
+-- Inlining interface generic_sram_line_en_if(fast__2)
+-- Optimizing module fpio_fifo(fast)
+-- Inlining interface generic_sram_line_en_master_core(fast)
+-- Optimizing interface generic_sram_line_en_master_bfm(fast)
+-- Inlining interface fpio_fifo_if(fast__1)
+-- Optimizing module fpio(fast)
+-- Inlining interface fpio_fifo_out_client_bfm_core(fast)
+-- Optimizing interface fpio_fifo_out_client_bfm(fast)
+-- Inlining interface fpio_fifo_in_client_bfm_core(fast)
+-- Optimizing interface fpio_fifo_in_client_bfm(fast)
+-- Optimizing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)(fast)
+-- Optimizing package mtiUvm.questa_uvm_pkg(fast)
+-- Optimizing package fpio_fifo_out_client_agent_pkg(fast)
+-- Optimizing package fpio_fifo_in_client_agent_pkg(fast)
+-- Optimizing package generic_sram_line_en_master_agent_pkg(fast)
+-- Optimizing package fpio_uvm_env_pkg(fast)
+-- Optimizing package fpio_uvm_tests_pkg(fast)
+-- Optimizing interface generic_sram_line_en_if(fast)
+-- Optimizing interface fpio_fifo_if(fast)
+-- Optimizing interface fpio_fifo_if(fast)
+-- Optimizing interface fpio_fifo_in_client_bfm(fast)
+-- Optimizing interface fpio_fifo_in_client_bfm_core(fast)
+-- Optimizing interface fpio_fifo_out_client_bfm(fast)
+-- Optimizing interface fpio_fifo_out_client_bfm_core(fast)
+-- Optimizing interface generic_sram_line_en_if(fast)
+-- Optimizing interface generic_sram_line_en_master_bfm(fast)
+-- Optimizing interface generic_sram_line_en_master_core(fast)
+viscom:
+VISCOM: QuestaSim /u/release/10.6a/questasim/linux_x86_64/Visualizer/bin/viscom 10.6a at 2017.03 Mar 16 2017
+VISCOM: Writing design.bin
+VISCOM: Done writing design.bin
+
+Optimized design name is fpio_uvm_tb_opt
+End time: 14:40:16 on Jun 08,2017, Elapsed time: 0:00:02
+Errors: 0, Warnings: 0
+SIMSCRIPTS_TOOLS: visualizer
+SIMSCRIPTS_PLUSARGS_TOOLS: visualizer
+PLUSARGS: +UVM_TESTNAME=fpio_uvm_smoke_test +tool.visualizer
+INFACT_IMPORT_TARGETS: 
+build-pre-compile: 
+build-compile: vlog_compile
+build-post-compile: 
+build-pre-link: 
+build-link: vopt_opt  
+build-post-link: 
+make: Leaving directory `/export/scratch/ballance/rundir/fpio_uvm/qs'
+make: Entering directory `/export/scratch/ballance/rundir/fpio_uvm/qs'
+== Simulator: qs == 
+== Enabled Tools ==
+  - visualizer
+make: Leaving directory `/export/scratch/ballance/rundir/fpio_uvm/qs'
+QuestaSim-64 vmap 10.6a Lib Mapping Utility 2017.03 Mar 16 2017
+vmap work /scratch1/ballance/rundir/fpio_uvm/qs/work 
+Copying /u/release/10.6a/questasim/linux_x86_64/../modelsim.ini to modelsim.ini
+Modifying modelsim.ini
+# Loading Mentor Graphics Visualizer shared object '/u/release/10.6a/questasim/linux_x86_64/Visualizer/bin/libqvisualizer.so'
+# vsim -sv_seed 1 -classdebug -uvmcontrol=struct,msglog -qwavedb=+report=class+signal+class+transaction+uvm_schematic -batch -do "run.do" fpio_uvm_tb_opt -l simx.log "+TESTNAME=fpio_uvm_smoke_test" "+UVM_TESTNAME=fpio_uvm_smoke_test" 
+# Start time: 14:40:17 on Jun 08,2017
+# //  Questa Sim-64
+# //  Version 10.6a linux_x86_64 Mar 16 2017
+# //
+# //  Copyright 1991-2017 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  QuestaSim and its associated documentation contain trade
+# //  secrets and commercial or financial information that are the property of
+# //  Mentor Graphics Corporation and are privileged, confidential,
+# //  and exempt from disclosure under the Freedom of Information Act,
+# //  5 U.S.C. Section 552. Furthermore, this information
+# //  is prohibited from disclosure under the Trade Secrets Act,
+# //  18 U.S.C. Section 1905.
+# //
+# Loading sv_std.std
+# Loading work.fpio_fifo_out_client_bfm_core(fast)
+# Loading mtiUvm.uvm_pkg
+# Loading work.fpio_fifo_out_client_agent_pkg(fast)
+# Loading work.fpio_fifo_in_client_bfm_core(fast)
+# Loading work.fpio_fifo_in_client_agent_pkg(fast)
+# Loading work.generic_sram_line_en_master_core(fast)
+# Loading work.generic_sram_line_en_master_agent_pkg(fast)
+# Loading work.fpio_uvm_env_pkg(fast)
+# Loading work.fpio_uvm_tests_pkg(fast)
+# Loading work.fpio_uvm_tb(fast)
+# Loading work.fpio(fast)
+# Loading work.fpio_fifo(fast)
+# Loading work.generic_sram_line_en_dualport_w(fast)
+# Loading work.fpio_fifo_in_client_bfm(fast)
+# Loading work.fpio_fifo_out_client_bfm(fast)
+# Loading work.generic_sram_line_en_master_bfm(fast)
+# Loading mtiUvm.questa_uvm_pkg(fast)
+# Loading /u/release/10.6a/questasim/uvm-1.1d/linux_x86_64/uvm_dpi.so
+# 
+# do run.do
+# ** Warning: (vsim-4901) Logging to a WLF file is not supported when qwavedb is enabled.
+# SV_SEED: 1
+# 
+# *****************************************************************
+#    Using QuickLZ compression software.
+# *****************************************************************
+# 
+# qwavedb_dumpvars: Initiating qwavedb class logging
+# 
+# 	Loading class filter file '/u/release/10.6a/questasim/linux_x86_64/Visualizer/bin/../config/uvmclassfilter.txt'
+# 
+# qwavedb_dumpvars: Done initiating qwavedb class logging
+# ----------------------------------------------------------------
+# UVM-1.1d
+# (C) 2007-2013 Mentor Graphics Corporation
+# (C) 2007-2013 Cadence Design Systems, Inc.
+# (C) 2006-2013 Synopsys, Inc.
+# (C) 2011-2013 Cypress Semiconductor Corp.
+# ----------------------------------------------------------------
+# 
+#   ***********       IMPORTANT RELEASE NOTES         ************
+# 
+#   You are using a version of the UVM library that has been compiled
+#   with `UVM_NO_DEPRECATED undefined.
+#   See http://www.eda.org/svdb/view.php?id=3313 for more details.
+# 
+#   You are using a version of the UVM library that has been compiled
+#   with `UVM_OBJECT_MUST_HAVE_CONSTRUCTOR undefined.
+#   See http://www.eda.org/svdb/view.php?id=3770 for more details.
+# 
+#       (Specify +UVM_NO_RELNOTES to turn off this notice)
+# 
+# UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(215) @ 0: reporter [Questa UVM] QUESTA_UVM-1.2.3
+# UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(217) @ 0: reporter [Questa UVM]  questa_uvm::init(+trlog,+msglog)
+# UVM_INFO @ 0: reporter [RNTST] Running test fpio_uvm_smoke_test...
+# Mentor Graphics software version 10.6a (Build number 0)
+# Copyright (C) 1999-2015 by Mentor Graphics All rights reserved.
+	 Class Filter File used = /u/release/10.6a/questasim/linux_x86_64/Visualizer/bin/../config/uvmclassfilter.txt
+# qwavedb_dumpvars: Initiating qwavedb waveform capturing
+# 
+# 
+# qwavedb_dumpvars: Done initiating qwavedb waveform capturing
+# 
+# Space remaining: 253
+# Space remaining: 252
+# Space remaining: 252
+# **************************************************************************
+# * Questa UVM Transaction Recording Turned ON.                            *
+# * recording_detail has been set.                                         *
+# *  To turn off, set 'recording_detail' to off:                           *
+# * uvm_config_db#(int)            ::set(null, "", "recording_detail", 0); *
+# * uvm_config_db#(uvm_bitstream_t)::set(null, "", "recording_detail", 0); *
+# **************************************************************************
+# Sending back data 1 1
+# item.data=1
+# m_item.data=  1
+# Data: 1
+# Bytes available: 0
+# DATA: 5
+# Bytes available: 1
+# Bytes available: 1
+# UVM_INFO verilog_src/uvm-1.1d/src/base/uvm_objection.svh(1268) @ 2550: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
+# 
+# --- UVM Report Summary ---
+# 
+# ** Report counts by severity
+# UVM_INFO :    4
+# UVM_WARNING :    0
+# UVM_ERROR :    0
+# UVM_FATAL :    0
+# ** Report counts by id
+# [Questa UVM]     2
+# [RNTST]     1
+# [TEST_DONE]     1
+# ** Note: $finish    : /u/release/10.6a/questasim/linux_x86_64/../verilog_src/uvm-1.1d/src/base/uvm_root.svh(430)
+#    Time: 2550 ns  Iteration: 55  Instance: /fpio_uvm_tb
+# Saving coverage database on exit...
+# qwavedb_dumpvars : Simulation ending at [0 2550] 0
+# ========= Visualizer Dump Summary report =========
+# 	 #Design Ids       = 161
+# 	 #Class Ids        = 2087 (Recycled = 0)
+# 	 #Transaction Ids  = 2
+# 	 #Total Ids        = 2251
+# 	 #Swaps            = 3
+# 	  Id Memory        = 234.10 KB
+# 	  Swap Memory      = 50.00 MB
+# ========= End of Visualizer Dump Summary report =========
+# 
+# ======================== Class Defs ========================
+# 
+# Class uvm_factory (9) with 2 vars:
+# 	Var m_debug_pass
+# 	Var m_inst
+# Class uvm_recorder (53) with 13 vars:
+# 	Var m_leaf_name
+# 	Var file
+# 	Var handle
+# 	Var recording_depth
+# 	Var tr_handle
+# 	Var abstract
+# 	Var identifier
+# 	Var physical
+# 	Var default_radix
+# 	Var policy
+# 	Var filename
+# 	Var type_name
+# 	Var scope
+# Class uvm_report_server (60) with 6 vars:
+# 	Var m_leaf_name
+# 	Var max_quit_count
+# 	Var quit_count
+# 	Var enable_report_id_count_summary
+# 	Var m_max_quit_overridable
+# 	Var m_global_report_server
+# Class uvm_end_of_elaboration_phase (72) with 3 vars:
+# 	Var m_leaf_name
+# 	Var type_name
+# 	Var m_inst
+# Class uvm_start_of_simulation_phase (73) with 3 vars:
+# 	Var m_leaf_name
+# 	Var type_name
+# 	Var m_inst
+# Class uvm_run_phase (74) with 3 vars:
+# 	Var m_leaf_name
+# 	Var type_name
+# 	Var m_inst
+# Class uvm_check_phase (76) with 3 vars:
+# 	Var m_leaf_name
+# 	Var type_name
+# 	Var m_inst
+# Class uvm_report_phase (77) with 3 vars:
+# 	Var m_leaf_name
+# 	Var type_name
+# 	Var m_inst
+# Class uvm_reset_phase (80) with 3 vars:
+# 	Var m_leaf_name
+# 	Var type_name
+# 	Var m_inst
+# Class uvm_configure_phase (83) with 3 vars:
+# 	Var m_leaf_name
+# 	Var type_name
+# 	Var m_inst
+# Class uvm_main_phase (86) with 3 vars:
+# 	Var m_leaf_name
+# 	Var type_name
+# 	Var m_inst
+# Class uvm_root (92) with 7 vars:
+# 	Var m_leaf_name
+# 	Var m_name
+# 	Var enable_print_topology
+# 	Var finish_on_completion
+# 	Var m_phase_all_done
+# 	Var clp
+# 	Var m_inst
+# Class fpio_fifo_in_client_agent__1 (328) with 11 vars:
+# 	Var m_leaf_name
+# 	Var m_name
+# 	Var is_active
+# 	Var type_name
+# 	Var report_id
+# 	Var m_cfg
+# 	Var m_driver
+# 	Var m_drv_out_ap
+# 	Var m_mon_out_ap
+# 	Var m_monitor
+# 	Var m_seqr
+# Class fpio_fifo_in_client_driver__1 (330) with 5 vars:
+# 	Var m_leaf_name
+# 	Var m_name
+# 	Var report_id
+# 	Var ap
+# 	Var m_cfg
+# Class fpio_fifo_in_client_seq_item__1 (331) with 10 vars:
+# 	Var m_leaf_name
+# 	Var m_transaction_id
+# 	Var stream_handle
+# 	Var tr_handle
+# 	Var m_recorder
+# 	Var m_sequence_id
+# 	Var m_parent_sequence
+# 	Var m_sequencer
+# 	Var data
+# 	Var report_id
+# Class fpio_uvm_env (342) with 7 vars:
+# 	Var m_leaf_name
+# 	Var m_name
+# 	Var type_name
+# 	Var type_name
+# 	Var m_ext2fpio_agent
+# 	Var m_fpio2ext_agent
+# 	Var m_sram_agent
+# Class fpio_fifo_in_client_config__1 (343) with 6 vars:
+# 	Var m_leaf_name
+# 	Var has_driver
+# 	Var has_monitor
+# 	Var has_sequencer
+# 	Var report_id
+# 	Var vif
+# Class fpio_fifo_in_client_monitor__1 (349) with 6 vars:
+# 	Var m_leaf_name
+# 	Var m_name
+# 	Var type_name
+# 	Var report_id
+# 	Var ap
+# 	Var m_cfg
+# Class uvm_sequencer__3 (352) with 2 vars:
+# 	Var m_leaf_name
+# 	Var m_name
+# Class fpio_fifo_out_client_agent__1 (364) with 11 vars:
+# 	Var m_leaf_name
+# 	Var m_name
+# 	Var is_active
+# 	Var type_name
+# 	Var report_id
+# 	Var m_cfg
+# 	Var m_driver
+# 	Var m_drv_out_ap
+# 	Var m_mon_out_ap
+# 	Var m_monitor
+# 	Var m_seqr
+# Class fpio_fifo_out_client_driver__1 (366) with 5 vars:
+# 	Var m_leaf_name
+# 	Var m_name
+# 	Var report_id
+# 	Var ap
+# 	Var m_cfg
+# Class fpio_fifo_out_client_seq_item__1 (367) with 10 vars:
+# 	Var m_leaf_name
+# 	Var m_transaction_id
+# 	Var stream_handle
+# 	Var tr_handle
+# 	Var m_recorder
+# 	Var m_sequence_id
+# 	Var m_parent_sequence
+# 	Var m_sequencer
+# 	Var data
+# 	Var report_id
+# Class fpio_fifo_out_client_config__1 (379) with 6 vars:
+# 	Var m_leaf_name
+# 	Var has_driver
+# 	Var has_monitor
+# 	Var has_sequencer
+# 	Var report_id
+# 	Var vif
+# Class fpio_fifo_out_client_monitor__1 (384) with 6 vars:
+# 	Var m_leaf_name
+# 	Var m_name
+# 	Var type_name
+# 	Var report_id
+# 	Var ap
+# 	Var m_cfg
+# Class uvm_sequencer__4 (387) with 2 vars:
+# 	Var m_leaf_name
+# 	Var m_name
+# Class generic_sram_line_en_master_agent__1 (399) with 11 vars:
+# 	Var m_leaf_name
+# 	Var m_name
+# 	Var is_active
+# 	Var type_name
+# 	Var report_id
+# 	Var m_cfg
+# 	Var m_driver
+# 	Var m_drv_out_ap
+# 	Var m_mon_out_ap
+# 	Var m_monitor
+# 	Var m_seqr
+# Class generic_sram_line_en_master_driver__1 (401) with 5 vars:
+# 	Var m_leaf_name
+# 	Var m_name
+# 	Var report_id
+# 	Var ap
+# 	Var m_cfg
+# Class generic_sram_line_en_master_config__1 (413) with 6 vars:
+# 	Var m_leaf_name
+# 	Var has_driver
+# 	Var has_monitor
+# 	Var has_sequencer
+# 	Var report_id
+# 	Var vif
+# Class generic_sram_line_en_master_monitor__1 (417) with 6 vars:
+# 	Var m_leaf_name
+# 	Var m_name
+# 	Var type_name
+# 	Var report_id
+# 	Var ap
+# 	Var m_cfg
+# Class uvm_sequencer__5 (420) with 2 vars:
+# 	Var m_leaf_name
+# 	Var m_name
+# Class fpio_fifo_out_client_directed_seq__1 (442) with 10 vars:
+# 	Var m_leaf_name
+# 	Var m_transaction_id
+# 	Var stream_handle
+# 	Var tr_handle
+# 	Var m_recorder
+# 	Var m_sequence_id
+# 	Var m_parent_sequence
+# 	Var m_sequencer
+# 	Var report_id
+# 	Var m_item
+# Class fpio_fifo_in_client_directed_seq__1 (447) with 10 vars:
+# 	Var m_leaf_name
+# 	Var m_transaction_id
+# 	Var stream_handle
+# 	Var tr_handle
+# 	Var m_recorder
+# 	Var m_sequence_id
+# 	Var m_parent_sequence
+# 	Var m_sequencer
+# 	Var report_id
+# 	Var m_item
+# Class fpio_uvm_smoke_test (453) with 6 vars:
+# 	Var m_leaf_name
+# 	Var m_name
+# 	Var type_name
+# 	Var type_name
+# 	Var m_env
+# 	Var type_name
+# Class questa_messagelogger_report_server (467) with 7 vars:
+# 	Var m_leaf_name
+# 	Var max_quit_count
+# 	Var quit_count
+# 	Var enable_report_id_count_summary
+# 	Var m_max_quit_overridable
+# 	Var m_global_report_server
+# 	Var m_q
+# Class questa_uvm_recorder (469) with 20 vars:
+# 	Var m_leaf_name
+# 	Var file
+# 	Var handle
+# 	Var recording_depth
+# 	Var tr_handle
+# 	Var abstract
+# 	Var identifier
+# 	Var physical
+# 	Var default_radix
+# 	Var policy
+# 	Var filename
+# 	Var type_name
+# 	Var scope
+# 	Var UVM_TR_TRACE_API
+# 	Var UVM_TR_TRACE_API_DETAIL
+# 	Var UVM_TR_TRACE_PLI_CALLS
+# 	Var uvm_tr_initialized
+# 	Var type_name
+# 	Var questa_uvm_default_recorder
+# 	Var scope
+# Class questa_uvm_components_finalized_phase (470) with 3 vars:
+# 	Var m_leaf_name
+# 	Var type_name
+# 	Var m_inst
+# ======================== Class Defs End ====================
+# 
+# ======================== Class Dumping Summary ========================
+# 
+#      #Inst  Id's/inst         Name
+#          1         20         questa_uvm_recorder
+#          1         13         uvm_recorder
+#          1         11         fpio_fifo_in_client_agent__1
+#          1         11         fpio_fifo_out_client_agent__1
+#          1         11         generic_sram_line_en_master_agent__1
+#          1         10         fpio_fifo_in_client_seq_item__1
+#          1         10         fpio_fifo_out_client_seq_item__1
+#          1         10         fpio_fifo_out_client_directed_seq__1
+#          1         10         fpio_fifo_in_client_directed_seq__1
+#          1          7         uvm_root
+#          1          7         fpio_uvm_env
+#          1          7         questa_messagelogger_report_server
+#          1          6         uvm_report_server
+#          1          6         fpio_fifo_in_client_config__1
+#          1          6         fpio_fifo_in_client_monitor__1
+#          1          6         fpio_fifo_out_client_config__1
+#          1          6         fpio_fifo_out_client_monitor__1
+#          1          6         generic_sram_line_en_master_config__1
+#          1          6         generic_sram_line_en_master_monitor__1
+#          1          6         fpio_uvm_smoke_test
+#          1          5         fpio_fifo_in_client_driver__1
+#          1          5         fpio_fifo_out_client_driver__1
+#          1          5         generic_sram_line_en_master_driver__1
+#          1          3         uvm_end_of_elaboration_phase
+#          1          3         uvm_start_of_simulation_phase
+#          1          3         uvm_run_phase
+#          1          3         uvm_check_phase
+#          1          3         uvm_report_phase
+#          1          3         uvm_reset_phase
+#          1          3         uvm_configure_phase
+#          1          3         uvm_main_phase
+#          1          3         questa_uvm_components_finalized_phase
+#          1          2         uvm_factory
+#          1          2         uvm_sequencer__3
+#          1          2         uvm_sequencer__4
+#          1          2         uvm_sequencer__5
+# --------------------------------------------------------------------------------
+#         36        225         Total
+# ======================== End of Class Dumping Summary ========================
+# End time: 14:40:23 on Jun 08,2017, Elapsed time: 0:00:06
+# Errors: 0, Warnings: 1
+FAIL: fpio_uvm_smoke_test - no PASS or FAIL
+make: Entering directory `/export/scratch/ballance/rundir/fpio_uvm/qs'
+vcover merge /scratch1/ballance/rundir/fpio_uvm/cov_merge.ucdb /scratch1/ballance/rundir/fpio_uvm/fpio_uvm_smoke_test_0001/cov.ucdb
+QuestaSim-64 vcover 10.6a Coverage Utility 2017.03 Mar 16 2017
+Start time: 14:40:24 on Jun 08,2017
+vcover merge /scratch1/ballance/rundir/fpio_uvm/cov_merge.ucdb /scratch1/ballance/rundir/fpio_uvm/fpio_uvm_smoke_test_0001/cov.ucdb 
+QuestaSim-64 vcover 10.6a Coverage Utility 2017.03 Mar 16 2017
+Merging file /scratch1/ballance/rundir/fpio_uvm/fpio_uvm_smoke_test_0001/cov.ucdb
+Writing merged result to /scratch1/ballance/rundir/fpio_uvm/cov_merge.ucdb
+
+End time: 14:40:24 on Jun 08,2017, Elapsed time: 0:00:00
+Errors: 0, Warnings: 0
+make: Leaving directory `/export/scratch/ballance/rundir/fpio_uvm/qs'

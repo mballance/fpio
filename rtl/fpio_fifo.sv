@@ -35,7 +35,7 @@ module fpio_fifo #(
 		if (rstn == 0) begin
 			push_state <= 0;
 			push_valid <= 0;
-			push_done <= 0;
+			push_done  <= 0;
 		end else begin
 			push_done <= in.data_en;
 //			push_valid <= (push_valid << 1);
@@ -120,7 +120,7 @@ module fpio_fifo #(
 		end
 	end
 	
-	assign in.avail = (fifo_sz - fifo_count);
+	assign in.avail  = (fifo_sz - fifo_count);
 	assign out.avail = fifo_count;
 	
 	generic_sram_line_en_if #(

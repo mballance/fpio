@@ -18,3 +18,11 @@
 	path = synthscripts
 	url = https://github.com/mballance/synthscripts.git
 	branch = master
+[submodule "ve/sv_bfms"]
+	path = ve/sv_bfms
+	url = https://github.com/mballance/sv_bfms.git
+	branch = master
+[submodule "rtl/wb_sys_ip"]
+	path = rtl/wb_sys_ip
+	url = https://github.com/mballance/wb_sys_ip.git
+	branch = master
