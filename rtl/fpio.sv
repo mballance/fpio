@@ -53,7 +53,7 @@ module fpio #(
 		(host_if.addr == 2)?ext2host_fifo_if.data:
 		(host_if.addr == 3)?ext2host_fifo_if.avail:0;
 	
-	always @(posedge clk or rstn) begin
+	always @(posedge clk or negedge rstn) begin
 		if (rstn == 0) begin
 			irq_r <= 0;
 			divisor <= 0;

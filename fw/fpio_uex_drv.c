@@ -4,7 +4,7 @@
 #include "fpio_uex_drv.h"
 #include "uex.h"
 #include <string.h>
-#include <stdio.h>
+// #include <stdio.h>
 
 void fpio_uex_drv_init(
 		fpio_uex_drv_t		*drv,
@@ -30,7 +30,7 @@ int fpio_uex_drv_write(
 	uint8_t *data_p = (uint8_t *)data;
 	do {
 		avail = uex_ioread32(drv->base+1);
-		fprintf(stdout, "avail=%d\n", avail);
+//		fprintf(stdout, "avail=%d\n", avail);
 	} while (avail == 0);
 
 	for (i=0; i<sz; i++) {

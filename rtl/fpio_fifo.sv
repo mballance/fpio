@@ -31,7 +31,7 @@ module fpio_fifo #(
 	reg						push_done;
 	reg[VALID_DELAY-1:0]	push_valid;
 	
-	always @(posedge clk or rstn) begin
+	always @(posedge clk or negedge rstn) begin
 		if (rstn == 0) begin
 			push_state <= 0;
 			push_valid <= 0;
@@ -57,7 +57,6 @@ module fpio_fifo #(
 		end
 	end
 //	assign u_in2ram.write_en = (in.data_en | push_state == 1);
-	assign u_in2ram.write_en = in.data_en;
 //	assign in.data_ack = push_valid[VALID_DELAY-1];
 	assign in.data_ack = push_done;
 	
@@ -67,7 +66,7 @@ module fpio_fifo #(
 	reg						pop_done;
 	reg[POP_DELAY-1:0]		pop_valid;
 	
-	always @(posedge clk or rstn) begin
+	always @(posedge clk or negedge rstn) begin
 		if (rstn == 0) begin
 			pop_state <= 0;
 			pop_valid <= 0;
@@ -95,7 +94,7 @@ module fpio_fifo #(
 //	assign out.data_ack = pop_valid[POP_DELAY-1];
 	assign out.data_ack = pop_done;
 
-	always @(posedge clk or rstn) begin
+	always @(posedge clk or negedge rstn) begin
 		if (rstn == 0) begin
 			fifo_top 	<= 0;
 			fifo_bottom <= 0;
@@ -138,6 +137,7 @@ module fpio_fifo #(
 	assign u_in2ram.addr = fifo_top;
 	assign u_in2ram.read_en = 0;
 	assign u_in2ram.write_data = in.data;
+	assign u_in2ram.write_en = in.data_en;
 	
 	generic_sram_line_en_dualport_w #(
 		.MEM_ADDR_BITS  (FIFO_BITS ), 
